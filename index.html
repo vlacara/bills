@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tracing the History of New Media in Media and Information Literacy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Century+Gothic:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: linear-gradient(135deg, #0a192f 0%, #172a45 50%, #1e3a5f 100%);
+      --text: #f0f4f8;
+      --accent: #64b5f6;
+      --light: #bbdefb;
+      --card: rgba(15, 35, 70, 0.85);
+      --border: rgba(100, 181, 246, 0.35);
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    
+    body {
+      font-family: 'Century Gothic', 'Futura', sans-serif;
+      font-size: 25px;               /* Minimum 25px */
+      font-weight: 700;              /* Bold everywhere */
+      line-height: 1.8;
+      color: var(--text);
+      background: var(--bg);
+      background-attachment: fixed;
+      padding: 4rem 0;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+
+    header {
+      text-align: center;
+      padding: 6rem 2rem;
+      background: rgba(10, 25, 47, 0.9);
+      border-radius: 24px;
+      margin-bottom: 5rem;
+      backdrop-filter: blur(12px);
+      border: 3px solid var(--border);
+    }
+    h1 {
+      font-size: 5rem;
+      font-weight: 900;
+      letter-spacing: 3px;
+      margin-bottom: 1.2rem;
+      background: linear-gradient(90deg, #bbdefb, #64b5f6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subtitle {
+      font-size: 2.1rem;
+      font-weight: 700;
+    }
+
+    h2 {
+      font-size: 3.4rem;
+      font-weight: 900;
+      color: var(--light);
+      margin: 5.5rem 0 2.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 6px solid var(--accent);
+      display: inline-block;
+    }
+    h3 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: #e3f2fd;
+      margin: 4rem 0 2rem;
+    }
+
+    p, li, .caption {
+      font-size: 25px;
+      font-weight: 700;
+      margin-bottom: 1.8rem;
+    }
+    ul { padding-left: 2.5rem; margin: 2.5rem 0; }
+    li { margin-bottom: 1.4rem; }
+
+    .timeline {
+      position: relative;
+      margin: 6rem 0;
+      padding-left: 3.5rem;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 1rem;
+      top: 0; bottom: 0;
+      width: 10px;
+      background: linear-gradient(to bottom, #64b5f6, #bbdefb);
+      border-radius: 5px;
+    }
+    .event {
+      background: var(--card);
+      padding: 3rem;
+      border-radius: 24px;
+      margin-bottom: 4.5rem;
+      position: relative;
+      border: 3px solid var(--border);
+      transition: all 0.4s ease;
+      backdrop-filter: blur(12px);
+    }
+    .event:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    }
+    .event::before {
+      content: '';
+      position: absolute;
+      left: -3.4rem;
+      top: 3.5rem;
+      width: 32px; height: 32px;
+      background: var(--light);
+      border: 8px solid #0a192f;
+      border-radius: 50%;
+    }
+    .event-year {
+      position: absolute;
+      top: 2.2rem; right: 2.8rem;
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--accent);
+    }
+    .event img {
+      width: 100%;
+      border-radius: 18px;
+      margin-top: 2rem;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.7);
+    }
+    .caption {
+      font-size: 1.7rem;
+      text-align: center;
+      margin-top: 1rem;
+      opacity: 0.9;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 3rem;
+      margin: 6rem 0;
+    }
+    .impact-card {
+      background: var(--card);
+      border-radius: 28px;
+      overflow: hidden;
+      text-align: center;
+      border: 3px solid var(--border);
+      transition: transform 0.5s ease;
+    }
+    .impact-card:hover { transform: scale(1.08); }
+    .impact-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+    .impact-card h3 {
+      font-size: 2.6rem;
+      padding: 2.2rem 1.5rem 1rem;
+    }
+    .impact-card p {
+      padding: 0 2.2rem 3rem;
+      font-size: 25px;
+    }
+
+    blockquote {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.9;
+      border-left: 10px solid var(--accent);
+      padding-left: 3.5rem;
+      margin: 6rem 0;
+      color: #e3f2fd;
+    }
+
+    footer {
+      text-align: center;
+      padding: 7rem 0 4rem;
+      font-size: 2rem;
+      font-weight: 900;
+      background: rgba(10, 25, 47, 0.9);
+      border-radius: 24px;
+      margin-top: 6rem;
+      backdrop-filter: blur(10px);
+      border: 3px solid var(--border);
+      color: var(--light);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <h1>TRACING THE HISTORY<br>OF NEW MEDIA</h1>
+      <p class="subtitle">How Digital Evolution Transformed Media & Information Literacy</p>
+    </header>
+
+    <section>
+      <h2>INTRODUCTION</h2>
+      <p>NEW MEDIA — DIGITAL, INTERACTIVE, AND NETWORKED — HAS REDEFINED HUMAN COMMUNICATION IN JUST A FEW DECADES.</p>
+      <p>FROM THE FIRST EMAIL TO GENERATIVE AI, EACH BREAKTHROUGH HAS EXPANDED ACCESS WHILE DEMANDING NEW FORMS OF LITERACY.</p>
+    </section>
+
+    <section>
+      <h2>TIMELINE OF NEW MEDIA EVOLUTION</h2>
+      <div class="timeline">
+
+        <div class="event">
+          <div class="event-year">1945–1960s</div>
+          <h3>EARLY VISIONARIES</h3>
+          <p>VANNEVAR BUSH'S "MEMEX" AND J.C.R. LICKLIDER'S INTERGALACTIC NETWORK LAID THE THEORETICAL GROUNDWORK.</p>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Vannevar_Bush_portrait.jpg/800px-Vannevar_Bush_portrait.jpg" alt="Vannevar Bush">
+          <div class="caption">VANNEVAR BUSH – THE MEMEX CONCEPT (1945)</div>
+        </div>
+
+        <div class="event">
+          <div class="event-year">1969</div>
+          <h3>BIRTH OF THE INTERNET</h3>
+          <p>ARPANET SENDS THE FIRST MESSAGE: "LO" — THE SEED OF GLOBAL CONNECTIVITY.</p>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/ARPANET_1970s.jpg" alt="ARPANET">
+          <div class="caption">ARPANET LOGICAL MAP</div>
+        </div>
+
+        <div class="event">
+          <div class="event-year">1991</div>
+          <h3>WORLD WIDE WEB GOES PUBLIC</h3>
+          <p>TIM BERNERS-LEE MAKES HYPERTEXT UNIVERSALLY ACCESSIBLE.</p>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/First_Web_Server.jpg" alt="First web server">
+          <div class="caption">THE FIRST WEB SERVER (NEXT COMPUTER)</div>
+        </div>
+
+        <div class="event">
+          <div class="event-year">2004–2006</div>
+          <h3>WEB 2.0 & SOCIAL MEDIA</h3>
+          <p>FACEBOOK, YOUTUBE, TWITTER — EVERYONE BECOMES A PUBLISHER.</p>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Facebook_2005.png" alt="Facebook 2005">
+          <div class="caption">FACEBOOK IN 2005</div>
+        </div>
+
+        <div class="event">
+          <div class="event-year">2007–2010s</div>
+          <h3>MOBILE REVOLUTION</h3>
+          <p>IPHONE AND APP STORES PUT THE INTERNET IN EVERY POCKET.</p>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/IPhone_1st_gen.jpg" alt="iPhone">
+          <div class  class="caption">FIRST GENERATION IPHONE (2007)</div>
+        </div>
+
+        <div class="event">
+          <div class="event-year">2022–2025</div>
+          <h3>GENERATIVE AI ERA</h3>
+          <p>CHATGPT, MIDJOURNEY, AND DEEPFAKES BLUR HUMAN AND MACHINE CREATION.</p>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT" style="max-width:320px;">
+          <div class="caption">THE AGE OF GENERATIVE AI</div>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>IMPACT ON MEDIA & INFORMATION LITERACY</h2>
+      <div class="impact-grid">
+        <div class="impact-card">
+          <img src="https://images.unsplash.com/photo-1552667466-07770ae110d0?q=80&w=800&auto=format" alt="Communication">
+          <h3>COMMUNICATION</h3>
+          <p>INSTANT GLOBAL INTERACTION REMOVED GATEKEEPERS BUT AMPLIFIED ECHO CHAMBERS.</p>
+        </div>
+        <div class="impact-card">
+          <img src="https://images.unsplash.com/photo-1516321310764-9ab1b4f94b76?q=80&w=800&auto=format" alt="Information">
+          <h3>INFORMATION CONSUMPTION</h3>
+          <p>ALGORITHMS PRIORITIZE ENGAGEMENT OVER TRUTH. CRITICAL THINKING IS NOW ESSENTIAL.</p>
+        </div>
+        <div class="impact-card">
+          <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format" alt="Education">
+          <h3>MODERN EDUCATION</h3>
+          <p>STUDENTS LEARN FROM TIKTOK, YOUTUBE, AND AI. TEACHERS MUST BECOME MEDIA LITERACY GUIDES.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>REFLECTIONS</h2>
+      <blockquote>
+        EVERY NEW MEDIUM EXPANDS HUMAN CAPABILITY — AND CREATES NEW VULNERABILITIES. MEDIA LITERACY IS OUR IMMUNE SYSTEM.
+      </blockquote>
+
+      <h3>KEY TAKEAWAYS</h3>
+      <ul>
+        <li>TECHNOLOGY SHAPES THOUGHT — IT IS NEVER NEUTRAL</li>
+        <li>MIL MUST EVOLVE FASTER THAN THE TOOLS</li>
+        <li>ETHICAL CREATION IS AS CRUCIAL AS CRITICAL CONSUMPTION</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>CONCLUSION</h2>
+      <p>THE HISTORY OF NEW MEDIA IS THE STORY OF HUMAN AMPLIFICATION. MEDIA AND INFORMATION LITERACY ENSURES THAT AMPLIFICATION SERVES TRUTH, NOT DIVISION.</p>
+    </section>
+
+    <!-- Updated Footer -->
+    <footer>
+      <p>MEDIA AND INFORMATION LITERACY</p>
+    </footer>
+  </div>
+</body>
+</html>
